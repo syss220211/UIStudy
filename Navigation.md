@@ -2,13 +2,7 @@
 
 View에 Navigation 추가하기
 
-//
-//  ContentView.swift
-//  UIStudy
-//
-//  Created by 박서연 on 2022/11/09.
-//
-
+```
 import SwiftUI
 
 struct Person: Identifiable {
@@ -74,3 +68,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+```
