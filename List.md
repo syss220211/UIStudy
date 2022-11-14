@@ -94,3 +94,43 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 ```
+
+## List item delete & move
+
+```
+import SwiftUI
+
+struct ContentView: View {
+    
+    @State private var users = ["히주", "서연", "유라"]
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(users, id: \.self) { user in
+                    Text(user)
+                }
+                .onDelete(perform: removeList)
+                .onMove(perform: moveList)
+            }
+            .navigationTitle("학생")
+            .toolbar { EditButton() }
+        }
+    }
+    
+    //함수구현부
+    func removeList(at offsets: IndexSet) {
+        users.remove(atOffsets: offsets)
+    }
+    func moveList(from source: IndexSet, to destination: Int) {
+        users.move(fromOffsets: source, toOffset: destination)
+    }
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+```
