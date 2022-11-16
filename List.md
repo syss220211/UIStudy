@@ -135,41 +135,8 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-List는 목록 인터페이스를 구현할 수 있다. (수직적으로 데이터를 보여줄 수 있음)
 
-
-
-1. 정적리스트 
-import SwiftUI
-
-struct ContentView: View {
-    
-    var body: some View {
-        List {
-            Text("heart")
-            Text("bolt")
-            Text("star")
-            
-            /* 텍스트 말고 이미지를 넣어도 동일하게 작성 가능
-            Text("heart")
-            Image(systemName: "heart.fill")
-            Image("sy").resizable().scaledToFit().frame(width: 30, height: 30)
-            Circle().frame(width: 30, height: 30).foregroundColor(.pink)
-            Text("bolt")
-            Text("star")
-            */
-        }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-## 정적 리스트로 Section Header, Footer 활용하기
-
+## 리스트 Section Header, Footer 활용하기
 ```
 import SwiftUI
 
@@ -200,7 +167,7 @@ struct ContentView: View {
             }
             Section(header: Text("Family")) {
                 ForEach(Family) { family in
-                    /*@START_MENU_TOKEN@*/Text(family.name)/*@END_MENU_TOKEN@*/
+                    Text(family.name)
                 }
             }
         }
