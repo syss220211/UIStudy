@@ -18,8 +18,10 @@ struct ContentView: View {
         
         // 강아지 고양이 선택
         VStack(){
+            /*
             HStack(){
 //                VStack{
+                
                     Button {
                         clickAnimal = true
 //                        self.background(Color.yellow)
@@ -52,6 +54,32 @@ struct ContentView: View {
                         .bold()
                 }
             }
+             */
+            HStack() {
+                Spacer()
+                
+                Text("🐶")
+                    .font(.system(size: 50, weight: .bold))
+                    .frame(width: 120, height: 120)
+                    .background(Color(.clear))
+                    .cornerRadius(60)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 60).stroke(Color(.systemGray4), lineWidth: 1)
+                    )
+                
+                Spacer()
+                    
+                Text("🐱")
+                    .font(.system(size: 50, weight: .bold))
+                    .frame(width: 120, height: 120)
+                    .background(Color(.clear))
+                    .cornerRadius(60)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 60).stroke(Color(.systemGray4), lineWidth: 1)
+                    )
+                   
+                Spacer()
+            }
             Spacer().frame(height: 50)
             
             // 정보입력
@@ -63,7 +91,7 @@ struct ContentView: View {
                 HStack{
                     TextField("나이를 입력하여 주세요. (소숫점 불가)", text: $animalAge)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .lineSpacing(10)
+                        .lineSpacing(18)
                 }
                 Spacer().frame(height: 40)
                 
