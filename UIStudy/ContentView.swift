@@ -10,96 +10,32 @@ import SwiftUI
 struct ContentView: View {
     
     @State var animalAge: String = ""
+    @State var animalName: String = ""
+    
     @State var isShowingModal: Bool = false
     @State var clickAnimal: Bool = false
-    var emojis: [String] = ["🐶", "🐱"]
     
     var body: some View {
-        
-        // 강아지 고양이 선택
-        VStack(){
-            /*
-            HStack(){
-//                VStack{
+        NavigationView {
+            // 강아지 고양이 선택
+            VStack(){
                 
-                    Button {
-                        clickAnimal = true
-//                        self.background(Color.yellow)
-    
-                    } label: {
-                        Text(emojis[0])
-                            .font(.system(size: 80))
-                            .padding(10)
-//                            .self.background(Color.red)
-//                            .background(Color.yellow)
-                            .cornerRadius(70)
-                            .frame(width: 130, height: 130)
-                    }
-
-//                    Text(emojis[0])
-//                        .font(.system(size: 80))
-//                        .padding(10)
-//                        .background(Color.white)
-//                        .cornerRadius(70)
-//                        .frame(width: 130, height: 130)
-//                    Text("강아지")
-//                        .bold()
-//                }
-                Spacer().frame(width: 40)
-                VStack{
-                    Text(emojis[1])
-                        .font(.system(size: 80))
-                        .padding(10)
-                    Text("고양이")
-                        .bold()
-                }
-            }
-             */
-            HStack() {
-                Spacer()
+                PetRowView()
                 
-                Text("🐶")
-                    .font(.system(size: 50, weight: .bold))
-                    .frame(width: 120, height: 120)
-                    .background(Color(.clear))
-                    .cornerRadius(60)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 60).stroke(Color(.systemGray4), lineWidth: 1)
-                    )
+                Spacer().frame(height: 20)
                 
-                Spacer()
+                // 정보입력
+                VStack(alignment: .leading) {
                     
-                Text("🐱")
-                    .font(.system(size: 50, weight: .bold))
-                    .frame(width: 120, height: 120)
-                    .background(Color(.clear))
-                    .cornerRadius(60)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 60).stroke(Color(.systemGray4), lineWidth: 1)
-                    )
-                   
-                Spacer()
-            }
-            Spacer().frame(height: 50)
-            
-            // 정보입력
-            VStack(alignment: .leading){
-                HStack {
-                    Text("나이입력")
-                        .bold()
-                }
-                HStack{
-                    TextField("나이를 입력하여 주세요. (소숫점 불가)", text: $animalAge)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .lineSpacing(18)
-                }
-                Spacer().frame(height: 40)
-                
-                HStack {
+                    InputView(title: "나이 입력", placeholder: "나이를 입력해 주세요", animalInfo: $animalAge)
+                    InputView(title: "이름 입력", placeholder: "이름을 입력해 주세요", animalInfo: $animalName)
+                    
+                    Divider()
+                    
                     Text("품종 선택")
                         .bold()
-                }
-                HStack{
+                        .padding(.vertical, 10)
+                    
                     Button {
                         isShowingModal = true
                     } label: {
@@ -109,45 +45,115 @@ struct ContentView: View {
                     .frame(width: 350, height: 40)
                     .tint(.gray)
                     .buttonStyle(.borderedProminent)
-                    .sheet(isPresented: $isShowingModal){
-                        Text("품종선택.. ?")
+                    .sheet(isPresented: $isShowingModal) {
+                        ModalView(modalState: $isShowingModal)
+    //                        .presentationDetents([.medium, .large])
+    //                        .presentationDragIndicator(.visible)
+                            .presentationDetents([.fraction(0.3)])
+                    }
+                }
+                Spacer().frame(height: 100)
+                
+                VStack {
+                    
+                    HStack() {
+                        // 확인
+                        Spacer()
+                        
+                        NavigationLink(destination: TestView()) {
+                            
+                            Button {
+                                
+                            } label: {
+                                Text("확인")
+                                    .font(.system(size: 20, weight: .light))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(maxWidth: .infinity, minHeight: 45)
+                            .background(.gray)
+                            .cornerRadius(10)
+                        }
+                        
+                        Spacer()
+                        
+                        //로그아웃
+                        Button {
+                            
+                        } label: {
+                            Text("로그아웃")
+                                .frame(width: 130, height: 30)
+                        }
+                        .tint(.gray)
+                        .buttonStyle(.borderedProminent)
+                        
+                        Spacer()
                     }
                 }
             }
-            Spacer().frame(height: 100)
-            VStack{
-                HStack() {
-                    // 확인
-                    Button {
-                        
-                    } label: {
-                        Text("확인")
-                            .frame(width: 130, height: 30)
-                    }
-                    .tint(.gray)
-                    .buttonStyle(.borderedProminent)
-                    
-                    Spacer()
-                    
-                    //로그아웃
-                    Button {
-                        
-                    } label: {
-                        Text("로그아웃")
-                            .frame(width: 130, height: 30)
-                    }
-                    .tint(.gray)
-                    .buttonStyle(.borderedProminent)
-                }
-            }
-            
+            .padding()
         }
-        .padding()
     }
 }
+
+struct PetRowView: View {
+    
+    var body: some View {
+        
+        HStack() {
+            Spacer()
+            VStack{
+                Text("🐶")
+                    .font(.system(size: 50, weight: .bold))
+                    .frame(width: 120, height: 120)
+                    .background(Color(.clear))
+                    .cornerRadius(60)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 60).stroke(Color(.systemGray4), lineWidth: 1)
+                    )
+                Text("강아지")
+            }
+            Spacer()
+            VStack{
+                Text("🐱")
+                    .font(.system(size: 50, weight: .bold))
+                    .frame(width: 120, height: 120)
+                    .background(Color(.clear))
+                    .cornerRadius(60)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 60).stroke(Color(.systemGray4), lineWidth: 1)
+                    )
+                Text("고양이")
+            }
+            Spacer()
+        }
+    }
+}
+
+private struct InputView: View {
+    
+    var title: String
+    var placeholder: String
+
+    @Binding var animalInfo: String
+    
+    var body: some View {
+        
+        HStack {
+            Text(title)
+                .bold()
+            
+        }
+        
+        TextField(placeholder, text: $animalInfo)
+    }
+}
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
     }
 }
