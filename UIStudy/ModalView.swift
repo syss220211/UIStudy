@@ -16,7 +16,6 @@ struct ModalView: View {
             Text("품종선택.. ?")
             
             Button {
-                
                 modalState = false
                 
             } label: {

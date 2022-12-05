@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @State var isShowingModal: Bool = false
     @State var clickAnimal: Bool = false
+    @State var clickCheck: Bool = false
     
     var body: some View {
         NavigationView {
@@ -21,15 +22,15 @@ struct ContentView: View {
             VStack(){
                 
                 PetRowView()
-                
                 Spacer().frame(height: 20)
                 
                 // 정보입력
                 VStack(alignment: .leading) {
                     
                     InputView(title: "나이 입력", placeholder: "나이를 입력해 주세요", animalInfo: $animalAge)
-                    InputView(title: "이름 입력", placeholder: "이름을 입력해 주세요", animalInfo: $animalName)
+                    Divider()
                     
+                    InputView(title: "이름 입력", placeholder: "이름을 입력해 주세요", animalInfo: $animalName)
                     Divider()
                     
                     Text("품종 선택")
@@ -45,11 +46,17 @@ struct ContentView: View {
                     .frame(width: 350, height: 40)
                     .tint(.gray)
                     .buttonStyle(.borderedProminent)
+                    /* 단순 full modal
+                     .sheet(isPresented: $isShowingModal) {
+                                 Text("open modal!")
+                             }
+                     */
+                    // 하프 모달
                     .sheet(isPresented: $isShowingModal) {
-                        ModalView(modalState: $isShowingModal)
-    //                        .presentationDetents([.medium, .large])
-    //                        .presentationDragIndicator(.visible)
-                            .presentationDetents([.fraction(0.3)])
+                        ModalView(modalState: $isShowingModal) //닫기 위해 modalState로 값 받기
+    //                        .presentationDetents([.medium, .large]) // half modal
+    //                        .presentationDragIndicator(.visible) // 내리는 bar false, true
+                            .presentationDetents([.fraction(0.3)]) // 비율로 조정
                     }
                 }
                 Spacer().frame(height: 100)
@@ -60,7 +67,7 @@ struct ContentView: View {
                         // 확인
                         Spacer()
                         
-                        NavigationLink(destination: TestView()) {
+                        NavigationLink(destination: LabelView()) {
                             
                             Button {
                                 
@@ -81,12 +88,18 @@ struct ContentView: View {
                             
                         } label: {
                             Text("로그아웃")
-                                .frame(width: 130, height: 30)
+                                .font(.system(size: 20, weight: .light))
+                                .foregroundColor(.white)
+//                                .frame(width: 130, height: 30)
                         }
-                        .tint(.gray)
-                        .buttonStyle(.borderedProminent)
+//                        .tint(.gray)
+//                        .buttonStyle(.borderedProminent)
+                        .frame(maxWidth: .infinity, minHeight: 45)
+                        // .infinity => 화면이 가로로 넓어지는 경우를 대비해서 spcaer로 공간주고 width는 infinity 주기
+                        .background(.gray)
+                        .cornerRadius(10)
                         
-                        Spacer()
+                        Spacer() // spacer 로 3개 자동으로 나누어주기
                     }
                 }
             }
@@ -143,8 +156,8 @@ private struct InputView: View {
                 .bold()
             
         }
-        
         TextField(placeholder, text: $animalInfo)
+        // 값을 받아야 하니까 $로 감싸기
     }
 }
 
