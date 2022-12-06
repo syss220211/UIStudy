@@ -1,23 +1,19 @@
 //
-//  LabelView.swift
+//  DiseaseView.swift
 //  UIStudy
 //
-//  Created by 박서연 on 2022/12/04.
+//  Created by 박서연 on 2022/12/06.
 //
 
 import SwiftUI
 
-struct LabelView: View {
-    
-//    @State var buttonState: Bool = false
-    
+struct DiseaseView: View {
     var body: some View {
         VStack(alignment: .leading) {
             
             // 치석
             Text("치석 단계를 선택해주세요")
                 .padding(.bottom, 15)
-            
             HStack{
                 ButtonView(state: "없음")
                 ButtonView(state: "경증")
@@ -46,6 +42,14 @@ struct LabelView: View {
     }
 }
 
+struct DiseaseView_Previews: PreviewProvider {
+    static var previews: some View {
+        DiseaseView()
+        
+        
+    }
+}
+
 // butotn
 private struct ButtonView: View {
     
@@ -54,20 +58,16 @@ private struct ButtonView: View {
     var body: some View {
         
         Button {
+            
         } label: {
             Text(state)
-                .frame(width: 100, height: 60)
+                .frame(width: .infinity, height: .infinity)
                 .overlay(
                         RoundedRectangle(cornerRadius: 16)
                             .stroke(Color.black, lineWidth: 1)
                     )
                 .foregroundColor(.black)
         }.padding(.trailing, 15)
-    }
-}
-
-struct LabelView_Previews: PreviewProvider {
-    static var previews: some View {
-        LabelView()
+            .background(Color(.yellow))
     }
 }

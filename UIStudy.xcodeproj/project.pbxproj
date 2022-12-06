@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D598FD9D293F3F9F00D86A4D /* DiseaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598FD9C293F3F9F00D86A4D /* DiseaseView.swift */; };
 		D5D7AC9B291BD4530074CEDF /* UIStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AC9A291BD4530074CEDF /* UIStudyApp.swift */; };
 		D5D7AC9D291BD4530074CEDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AC9C291BD4530074CEDF /* ContentView.swift */; };
 		D5D7AC9F291BD4540074CEDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D7AC9E291BD4540074CEDF /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D598FD9C293F3F9F00D86A4D /* DiseaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseView.swift; sourceTree = "<group>"; };
 		D5D7AC97291BD4530074CEDF /* UIStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D7AC9A291BD4530074CEDF /* UIStudyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStudyApp.swift; sourceTree = "<group>"; };
 		D5D7AC9C291BD4530074CEDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				D5D7ACC4291BDE050074CEDF /* TestView.swift */,
 				D5DE4A85293C758500BAB2D5 /* LabelView.swift */,
 				D5DE4A87293C819400BAB2D5 /* ModalView.swift */,
+				D598FD9C293F3F9F00D86A4D /* DiseaseView.swift */,
 				D5D7AC9E291BD4540074CEDF /* Assets.xcassets */,
 				D5D7ACA0291BD4540074CEDF /* Preview Content */,
 			);
@@ -271,6 +274,7 @@
 				D5D7AC9D291BD4530074CEDF /* ContentView.swift in Sources */,
 				D5D7AC9B291BD4530074CEDF /* UIStudyApp.swift in Sources */,
 				D5DE4A88293C819400BAB2D5 /* ModalView.swift in Sources */,
+				D598FD9D293F3F9F00D86A4D /* DiseaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
