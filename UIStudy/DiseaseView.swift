@@ -61,7 +61,7 @@ private struct ButtonView: View {
             
         } label: {
             Text(state)
-                .frame(width: .infinity, height: .infinity)
+                .frame(width: 70, height: 30)
                 .overlay(
                         RoundedRectangle(cornerRadius: 16)
                             .stroke(Color.black, lineWidth: 1)
