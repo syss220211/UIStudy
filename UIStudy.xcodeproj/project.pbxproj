@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D598FD9D293F3F9F00D86A4D /* DiseaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598FD9C293F3F9F00D86A4D /* DiseaseView.swift */; };
 		D5ADC3AF2950A9D800AA753C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ADC3AE2950A9D800AA753C /* AlertView.swift */; };
+		D5ADC3B12950B4B200AA753C /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ADC3B02950B4B200AA753C /* TabView.swift */; };
 		D5D7AC9B291BD4530074CEDF /* UIStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AC9A291BD4530074CEDF /* UIStudyApp.swift */; };
 		D5D7AC9D291BD4530074CEDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AC9C291BD4530074CEDF /* ContentView.swift */; };
 		D5D7AC9F291BD4540074CEDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D7AC9E291BD4540074CEDF /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		D598FD9C293F3F9F00D86A4D /* DiseaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseView.swift; sourceTree = "<group>"; };
 		D5ADC3AE2950A9D800AA753C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		D5ADC3B02950B4B200AA753C /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		D5D7AC97291BD4530074CEDF /* UIStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D7AC9A291BD4530074CEDF /* UIStudyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStudyApp.swift; sourceTree = "<group>"; };
 		D5D7AC9C291BD4530074CEDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				D5D7ACA0291BD4540074CEDF /* Preview Content */,
 				D5F668032946461B00B407AA /* NaviStudy.swift */,
 				D5ADC3AE2950A9D800AA753C /* AlertView.swift */,
+				D5ADC3B02950B4B200AA753C /* TabView.swift */,
 			);
 			path = UIStudy;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				D5DE4A88293C819400BAB2D5 /* ModalView.swift in Sources */,
 				D5ADC3AF2950A9D800AA753C /* AlertView.swift in Sources */,
 				D5F668042946461B00B407AA /* NaviStudy.swift in Sources */,
+				D5ADC3B12950B4B200AA753C /* TabView.swift in Sources */,
 				D598FD9D293F3F9F00D86A4D /* DiseaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
