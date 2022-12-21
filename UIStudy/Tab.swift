@@ -1,21 +1,17 @@
 //
-//  TabView.swift
+//  Tab.swift
 //  UIStudy
 //
-//  Created by 박서연 on 2022/12/20.
+//  Created by 박서연 on 2022/12/21.
 //
 
 import SwiftUI
 
-struct TabView: View {
-    
-    // selection 값? => 탭간 전환시 사용되는 변수 ?
-    @State var selection = 0
-    
+struct Tab: View {
     var body: some View {
         TabView {
             ReceivedView()
-//                .badge(2)
+                .badge(2)
                 .tabItem {
                     Label("Received", systemImage: "tray.and.arrow.down.fill")
                 }
@@ -24,7 +20,7 @@ struct TabView: View {
                     Label("Sent", systemImage: "tray.and.arrow.up.fill")
                 }
             AccountView()
-//                .badge("!")
+                .badge("!")
                 .tabItem {
                     Label("Account", systemImage: "person.crop.circle.fill")
                 }
@@ -50,9 +46,8 @@ struct AccountView: View {
     }
 }
 
-
-struct TabView_Previews: PreviewProvider {
+struct Tab_Previews: PreviewProvider {
     static var previews: some View {
-        TabView()
+        Tab()
     }
 }
